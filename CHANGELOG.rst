@@ -26,9 +26,7 @@ The format is inspired by `Keep a Changelog <http://keepachangelog.com/en/0.3.0/
 Bug Fix
 ^^^^^^^
 
-* #A/B/C/D in the toolbar for first order calculations now properly initialized
-with 0 instead of 0.00, and return integers instead of floats (which caused
-typeerrors with the model calculations).
+* #A/B/C/D in the toolbar for first order calculations now properly initialized with 0 instead of 0.00, and return integers instead of floats (which caused typeerrors with the model calculations).
 
 
 0.1.0 - 2017-10-14 (alpha release)
