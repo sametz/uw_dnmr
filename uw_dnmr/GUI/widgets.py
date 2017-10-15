@@ -90,10 +90,6 @@ class BaseEntryFrame(Frame):
         self.color = color
         self.controller = controller
 
-        # How the initial value for the widget depends on subclass, so:
-        if not self.initial_value:
-            self.initial_value = 0.00  # Should be overridden by subclass
-
         self.initialize()
         self.add_label()
         self.add_entry()
@@ -386,8 +382,11 @@ class VarBox(BaseEntryFrame):
             default: The default value to initiate the Entry widget with
             **options: the standard optional kwargs for a Frame object
         """
+        self.name = name
         self.dict = dict_
         self.initial_value = self.dict[name]
+        print(self.name, ' is assigned ', type(self.initial_value),
+              self.initial_value)
         BaseEntryFrame.__init__(self, parent, name, **options)
 
     def save_entry(self):
@@ -411,6 +410,15 @@ class IntBox(VarBox):
     # look into tkinter built-in entry boxes as component.
     def __init__(self, parent=None, **options):
         VarBox.__init__(self, parent, **options)
+
+    def save_entry(self):
+        """Saves widget's entry in the parent's dict, filling the entry with
+        0.00 if it was empty.
+        """
+        if not self.value_var.get():  # if entry left blank,
+            self.value_var.set(0)  # fill it with zero
+        # Add the widget's status to the container's dictionary
+        self.dict[self.name] = int(self.value_var.get())
 
     @staticmethod
     def is_valid(entry):
