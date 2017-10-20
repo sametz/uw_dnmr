@@ -10,17 +10,11 @@ from uw_dnmr.model.minimodel import dnmrplot_AB
 
 
 class MiniController:
-    """Instantiate uw_dnmr's view, and pass data and requests to/from
-    the model and the view.
+    """A stripped down controller to demonstrate the MVC relationships.
     
     The controller assumes the view offers the following methods:
     
-    * initialize()--Initializes the view. Currrently, just "OKs" the View 
-    to call Controller.update_view_plot after view's instantiation. 
-    
-    * clear()--clears the view's plot.
-    
-    * plot(x, y)--accept a tuple of x, y numpy arrays and plot the data.
+    * plot_data--accept a tuple of x, y numpy arrays and plot the data.
     
     The controller provides the following methods:
     
@@ -28,39 +22,29 @@ class MiniController:
     model simulation; and tell the view to plot the model's simulated
     spectral data.
 
-    * call_nspins_model: provide an interface that allows the model to be
-    called with the view's second-order data.
+    * DNMR_AB_kwargs_to_args: a utility function that converts model data as
+    kwargs to model data as args. Used for testing and to allow the web GUI
+    flexibility in how to pass variables to the controller.
     """
 
     def __init__(self):
         """Instantiate the view as a child of root, and then initializes it.
-        
-        Argument:
-            root: a tkinter.Tk() object
+
+        Attributes:
+            models: (dict) Matches a model's name to the model function
+            (currently limited to DNMR_AB)
+            DNMR_AB_defaults: (dict) Variable names and numbers to initialize
+             the GUI with.
+            view: the View. Ultimately, this must be some interface between
+            Python and the HTML/JS. Here, mocked out.
         """
         self.models = {'DNMR_AB': dnmrplot_AB}
-
         self.DNMR_AB_defaults = {'v1': 165.00,
                                  'v2': 135.00,
                                  'J': 12.00,
                                  'k': 12.00,
                                  'W': 0.5}
-
         self.view = MockView()
-
-    def DNMR_AB_kwargs_to_args(self, **kwargs):
-        """Convert view's data to args for model.
-
-        In the actual project, dicts are how variables are passed between the
-        View's numerical entry widgets and the Controller. Some models need
-        the Controller to provide an interface, converting this data to the
-        arguments required by the mode. Reduced this down to one conversion
-        for one model.
-        """
-        args = []
-        for arg_name in ['v1', 'v2', 'J', 'k', 'W']:
-            args.append(kwargs[arg_name])
-        return args
 
     def update_view_plot(self, model_name, *args, **kwargs):
         """
@@ -69,8 +53,7 @@ class MiniController:
 
         :param model: (str) The type of calculation to be performed.
         :param args: DNMR model is called with positional arguments.
-        :param data: first-order and second-order simulations are called with
-        keyword arguments.
+        :param kwargs: other simulations may be called with keyword arguments.
 
         :return: None (including when model is not recognized)
         """
@@ -80,6 +63,14 @@ class MiniController:
             print('model not recognized')
             return
         self.view.plot_data(*plotdata)
+
+    def DNMR_AB_kwargs_to_args(self, **kwargs):
+        """Convert kwargs to args for DNMR_AB model."""
+        args = []
+        for arg_name in ['v1', 'v2', 'J', 'k', 'W']:
+            args.append(kwargs[arg_name])
+        return args
+
 
 class MockView:
     def plot_data(self, x, y):

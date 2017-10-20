@@ -67,6 +67,8 @@ def dnmrplot_AB(v1, v2, J, k, W):
     l_limit = v2 - 50
     r_limit = v1 + 50
     x = np.linspace(l_limit, r_limit, 800)
+
+    # Function dnmr_ab is applied across np.linspace x:
     y = dnmr_AB(x, v1, v2, J, k, W)
     return x, y
 
