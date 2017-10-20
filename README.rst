@@ -1,5 +1,4 @@
 UD l33t h4xx0rs should check out the PROJECT_INTRO_
-External hyperlinks, like Python_.
 .. _PROJECT_INTRO: PROJECT_INTRO.rst
 
 UW-DNMR v0.1.1 (alpha)
