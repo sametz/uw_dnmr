@@ -1,5 +1,5 @@
 UD l33t h4xx0rs should check out the PROJECT_INTRO_
-.. _PROJECT_INTRO: PROJECT_INTRO.rst
+.. _PROJECT_INTRO: https://github.com/sametz/uw_dnmr/blob/flask_js_test/PROJECT_INTRO.rst
 
 UW-DNMR v0.1.1 (alpha)
 **********************
