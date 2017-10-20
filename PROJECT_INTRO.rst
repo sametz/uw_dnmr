@@ -8,8 +8,8 @@ Original Visual Basic 6 screenshot ('ABX simulation')
 
 Besides style, note the extra graphics displayed below the spectrum... an
 algorithm draws lines showing how the splitting pattern originates, and
-clicking/dragging them changes the spectrum itself. **interactive plots with
-extra graphical objects**
+clicking/dragging them changes the spectrum itself. **Interactive plots with
+extra graphical objects!**
 
 Python/tkinter implementation of ABX simulation
 -----------------------------------------------
