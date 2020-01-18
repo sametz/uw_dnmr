@@ -24,6 +24,27 @@ from uw_dnmr.GUI.view import View
 # from uw_dnmr.model.nmrplot import tkplot, dnmrplot_2spin, dnmrplot_AB
 
 
+def ABX_interface(**kwargs):
+    """Matches ABX behavior to WINDNMR behavior.
+
+    In WINDNMR, vx was hard coded to equal vb + 100.
+    """
+    # For ud_dnmr output to match WINDNMR output, Js must be transposed
+    kwargs['Jax'], kwargs['Jbx'] = kwargs['Jbx'], kwargs['Jax']
+    # Jbx, Jax = Jax, Jbx
+    # dVab = Vab
+    # Vab = Vcentr
+
+    # dVab = va - vb  # Reich: Vab
+    # Vab = (va + vb) / 2  # Reich: ABOff
+    Vcentr = kwargs['Vcentr']
+    Vab = kwargs['Vab']
+    # Reich's ABX: vx initialized as vb + 100
+    vx = Vcentr + (Vab / 2) + 100
+    kwargs['vx'] = vx
+    return kwargs
+
+
 # Temporarily adding tkplot function here to restore functionality.
 def tkplot(spectrum, w=0.5):
     """Generate linspaces of x and y coordinates suitable for plotting on a
@@ -100,6 +121,9 @@ class Controller:
                             'first_order']
 
         if model in multiplet_models:
+            if model == 'ABX':
+                data = ABX_interface(**data)
+                print(data)
             spectrum = self.models[model](**data)
             plotdata = tkplot(spectrum)
         elif model == 'nspin':
