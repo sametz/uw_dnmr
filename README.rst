@@ -1,4 +1,4 @@
-UW-DNMR v0.1.1 (alpha)
+UW-DNMR v0.2.0 (alpha)
 **********************
 
 **UW-DNMR** (Un-Windowed Dynamic NMR; pronounced "You Dee En Em Arr") is a
@@ -6,16 +6,15 @@ Python implementation of the core features of WinDNMR by Hans Reich. The
 long-term goal is to replicate the features of WinDNMR and to provide a
 useful open-source application for Mac and Linux as well as Windows.
 
-A secondary, (overly?)ambitious goal is to provide code and documentation of
-sufficient quality that it can serve as a tutorial for others on how to
-simulate NMR spectra and create a scientific application in Python.
-
 Installation and Use
 ====================
 
-The project is alpha and subject to change. The master branch should
-maintain a functional program. If you're curious, and have a Python 3
-installation, you can download the project folders, install the requirements in requirements.txt if necessary, and run main.py from the command line.
+The project is alpha and subject to change.
+The master branch should maintain a functional program.
+If you're curious, and have a Python 3 installation,
+you can download the project folders,
+install the requirements in requirements.txt if necessary,
+and run main.py from the command line.
 
 TODO
 ====
@@ -44,9 +43,10 @@ WinDNMR, to compare and verify that the simulations are performing correctly.
 The second-order calculations are entirely different from WinDNMR's, and draw
 primarily from two sources:
 
-* The lectures at `spindynamics.org <http://spindynamics.org/support.php>`_, particularly Ilya Kuprov's MATLAB code in "Simulation design and coding, Part I/II"
-* Examples found on the website of Frank Rioux (St. John's University and College of St. Benedict), particulary this example of tensor algebra: `<http://www.users.csbsju.edu/~frioux/nmr/ABC-NMR-Tensor.pdf>`_
-
-Although "baking the spin Hamiltonian from scratch" is educational, and may
-enable the modeling of non-spin-1/2 nuclei in the future, it likely comes at
-a performance cost, and may be factored out in future versions.
+* The lectures at `spindynamics.org <http://spindynamics.org/support.php>`_,
+  particularly Ilya Kuprov's MATLAB code in "Simulation design and coding,
+  Part I/II"
+* Examples found on the website of Frank Rioux
+  (St. John's University and College of St. Benedict),
+  particulary this example of tensor algebra:
+  `<http://www.users.csbsju.edu/~frioux/nmr/ABC-NMR-Tensor.pdf>`_
