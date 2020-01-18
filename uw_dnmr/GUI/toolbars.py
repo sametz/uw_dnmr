@@ -413,7 +413,7 @@ class DNMR_AB_Bar(ToolBar):
             self.vars = {'Va': 165.00,
                          'Vb': 135.00,
                          'J': 12.00,
-                         'kAB': 1.50,
+                         'kAB': 12.00,
                          'W': 0.5}
             kwargs = {'dict_': self.vars,
                       'realtime': True,

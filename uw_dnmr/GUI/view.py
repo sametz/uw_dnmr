@@ -51,7 +51,8 @@ class MPLgraph(FigureCanvasTkAgg):
         # print('figure associated with self.f')
         self.add = figure.add_subplot(111)
         # print('called figure.add_subplot')
-        self.add.invert_xaxis()
+        # invert_xaxis() doesn't seem to work!
+        # self.add.invert_xaxis()
         # print('inverted x axis')
         # line below used/worked in past...but is it really needed?
         # self.show()
@@ -70,6 +71,7 @@ class MPLgraph(FigureCanvasTkAgg):
         :param x: (numpy linspace)
         :param y: (numpy linspace)
         """
+        self.add.invert_xaxis()
         self.add.plot(x, y)
         # apparently .draw_idle() gives faster refresh than .draw()
         self.f.canvas.draw_idle()  # DRAW IS CRITICAL TO REFRESH
