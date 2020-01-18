@@ -10,16 +10,34 @@ Provides the following class:
 
 import tkinter as tk
 
+import numpy as np
+
 from nmrsim.discrete import AB, AB2, ABX, ABX3, AABB, AAXX
 from nmrsim.dnmr import dnmr_two_singlets, dnmr_AB
 from nmrsim.firstorder import multiplet
-from nmrsim.plt import mplplot
+from nmrsim.plt import add_lorentzians
 from nmrsim.qm import qm_spinsystem
 
 from uw_dnmr.GUI.view import View
 # from uw_dnmr.model.nmrmath import (nspinspec, AB, AB2, ABX, ABX3, AABB, AAXX,
 #                                      first_order)
 # from uw_dnmr.model.nmrplot import tkplot, dnmrplot_2spin, dnmrplot_AB
+
+
+# Temporarily adding tkplot function here to restore functionality.
+def tkplot(spectrum, w=0.5):
+    """Generate linspaces of x and y coordinates suitable for plotting on a
+    matplotlib tkinter canvas.
+    :param spectrum: A list of (frequency, intensity) tuples
+    :param w: peak width at half height
+    :return: a tuple of x and y coordinate linspaces
+    """
+    spectrum.sort()
+    r_limit = spectrum[-1][0] + 50
+    l_limit = spectrum[0][0] - 50
+    x = np.linspace(l_limit, r_limit, 2400)
+    y = add_lorentzians(x, spectrum, w)
+    return x, y
 
 
 class Controller:
@@ -83,10 +101,10 @@ class Controller:
 
         if model in multiplet_models:
             spectrum = self.models[model](**data)
-            plotdata = mplplot(spectrum)
+            plotdata = tkplot(spectrum)
         elif model == 'nspin':
             spectrum, w = self.models[model](**data)
-            plotdata = mplplot(spectrum, w)
+            plotdata = tkplot(spectrum, w)
         elif 'DNMR' in model:
             plotdata = self.models[model](*args)
         else:
