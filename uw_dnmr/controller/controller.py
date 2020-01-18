@@ -10,10 +10,16 @@ Provides the following class:
 
 import tkinter as tk
 
+from nmrsim.discrete import AB, AB2, ABX, ABX3, AABB, AAXX
+from nmrsim.dnmr import dnmr_two_singlets, dnmr_AB
+from nmrsim.firstorder import multiplet
+from nmrsim.plt import mplplot
+from nmrsim.qm import qm_spinsystem
+
 from uw_dnmr.GUI.view import View
-from uw_dnmr.model.nmrmath import (nspinspec, AB, AB2, ABX, ABX3, AABB, AAXX,
-                                     first_order)
-from uw_dnmr.model.nmrplot import tkplot, dnmrplot_2spin, dnmrplot_AB
+# from uw_dnmr.model.nmrmath import (nspinspec, AB, AB2, ABX, ABX3, AABB, AAXX,
+#                                      first_order)
+# from uw_dnmr.model.nmrplot import tkplot, dnmrplot_2spin, dnmrplot_AB
 
 
 class Controller:
@@ -51,10 +57,10 @@ class Controller:
                        'ABX3': ABX3,
                        'AABB': AABB,
                        'AAXX': AAXX,
-                       'first_order': first_order,
+                       'first_order': multiplet,
                        'nspin': self.call_nspins_model,
-                       'DNMR_Two_Singlets': dnmrplot_2spin,
-                       'DNMR_AB': dnmrplot_AB}
+                       'DNMR_Two_Singlets': dnmr_two_singlets,
+                       'DNMR_AB': dnmr_AB}
 
         self.view = View(root, self)
         self.view.pack(expand=tk.YES, fill=tk.BOTH)
@@ -77,10 +83,10 @@ class Controller:
 
         if model in multiplet_models:
             spectrum = self.models[model](**data)
-            plotdata = tkplot(spectrum)
+            plotdata = mplplot(spectrum)
         elif model == 'nspin':
             spectrum, w = self.models[model](**data)
-            plotdata = tkplot(spectrum, w)
+            plotdata = mplplot(spectrum, w)
         elif 'DNMR' in model:
             plotdata = self.models[model](*args)
         else:
@@ -118,7 +124,7 @@ class Controller:
             if not w.any():
                 print('w missing')
         else:
-            return nspinspec(v, j), w
+            return qm_spinsystem(v, j), w
 
 
 if __name__ == '__main__':

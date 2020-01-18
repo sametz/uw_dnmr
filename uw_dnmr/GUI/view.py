@@ -14,7 +14,7 @@ import matplotlib
 
 matplotlib.use("TkAgg")  # must be invoked before the imports below
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
-                                               NavigationToolbar2TkAgg)
+                                               NavigationToolbar2Tk)
 from matplotlib.figure import Figure
 
 from uw_dnmr.GUI.frames import RadioFrame
@@ -58,7 +58,7 @@ class MPLgraph(FigureCanvasTkAgg):
         # print('showing MPLgraph')
         self.get_tk_widget().pack(side=TOP, fill=BOTH, expand=1)
         # print('tk widget packed')
-        self.toolbar = NavigationToolbar2TkAgg(self, master)
+        self.toolbar = NavigationToolbar2Tk(self, master)
         # print('created toolbar')
         self.toolbar.update()
         # print('toolbar updated')
