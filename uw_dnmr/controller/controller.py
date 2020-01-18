@@ -10,10 +10,49 @@ Provides the following class:
 
 import tkinter as tk
 
+import numpy as np
+
+from nmrsim.discrete import AB, AB2, ABX, ABX3, AABB, AAXX
+from nmrsim.dnmr import dnmr_two_singlets, dnmr_AB
+from nmrsim.firstorder import multiplet
+from nmrsim.plt import add_lorentzians
+from nmrsim.qm import qm_spinsystem
+
 from uw_dnmr.GUI.view import View
-from uw_dnmr.model.nmrmath import (nspinspec, AB, AB2, ABX, ABX3, AABB, AAXX,
-                                     first_order)
-from uw_dnmr.model.nmrplot import tkplot, dnmrplot_2spin, dnmrplot_AB
+# from uw_dnmr.model.nmrmath import (nspinspec, AB, AB2, ABX, ABX3, AABB, AAXX,
+#                                      first_order)
+# from uw_dnmr.model.nmrplot import tkplot, dnmrplot_2spin, dnmrplot_AB
+
+
+def ABX_interface(**kwargs):
+    """Matches ABX behavior to WINDNMR behavior.
+
+    In WINDNMR, vx was hard coded to equal vb + 100.
+    """
+    # For ud_dnmr output to match WINDNMR output, Js must be transposed
+    kwargs['Jax'], kwargs['Jbx'] = kwargs['Jbx'], kwargs['Jax']
+    Vcentr = kwargs['Vcentr']
+    Vab = kwargs['Vab']
+    # Reich's ABX: vx initialized as vb + 100
+    vx = Vcentr + (Vab / 2) + 100
+    kwargs['vx'] = vx
+    return kwargs
+
+
+# Temporarily adding tkplot function here to restore functionality.
+def tkplot(spectrum, w=0.5):
+    """Generate linspaces of x and y coordinates suitable for plotting on a
+    matplotlib tkinter canvas.
+    :param spectrum: A list of (frequency, intensity) tuples
+    :param w: peak width at half height
+    :return: a tuple of x and y coordinate linspaces
+    """
+    spectrum.sort()
+    r_limit = spectrum[-1][0] + 50
+    l_limit = spectrum[0][0] - 50
+    x = np.linspace(l_limit, r_limit, 2400)
+    y = add_lorentzians(x, spectrum, w)
+    return x, y
 
 
 class Controller:
@@ -51,10 +90,10 @@ class Controller:
                        'ABX3': ABX3,
                        'AABB': AABB,
                        'AAXX': AAXX,
-                       'first_order': first_order,
+                       'first_order': multiplet,
                        'nspin': self.call_nspins_model,
-                       'DNMR_Two_Singlets': dnmrplot_2spin,
-                       'DNMR_AB': dnmrplot_AB}
+                       'DNMR_Two_Singlets': dnmr_two_singlets,
+                       'DNMR_AB': dnmr_AB}
 
         self.view = View(root, self)
         self.view.pack(expand=tk.YES, fill=tk.BOTH)
@@ -76,6 +115,8 @@ class Controller:
                             'first_order']
 
         if model in multiplet_models:
+            if model == 'ABX':
+                data = ABX_interface(**data)
             spectrum = self.models[model](**data)
             plotdata = tkplot(spectrum)
         elif model == 'nspin':
@@ -118,7 +159,7 @@ class Controller:
             if not w.any():
                 print('w missing')
         else:
-            return nspinspec(v, j), w
+            return qm_spinsystem(v, j), w
 
 
 if __name__ == '__main__':
