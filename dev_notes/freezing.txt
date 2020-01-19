@@ -1,0 +1,24 @@
+Notes on freezing uw_dnmr as a standalone application:
+
+Had previous luck freezing for Windows, but difficulty on mac b/c of tcl/tk.
+Tried a venv with latest python 3.7 downloaded from python.org, but problems
+persist.
+
+reminder to activate venv:
+    source venv/bin/activate
+
+With the conda env, tried many common methods for copying tcl/tk over,
+but failed.
+
+source venv/bin/activate
+pyinstaller --clean to remove old work
+
+https://stackoverflow.com/questions/56503113/pyinstaller-exe-returning-error-on-a-tkinter-script
+pyinstaller --onefile --add-binary='/System/Library/Frameworks/Tk.framework/Tk':'tk' --add-binary='/System/Library/Frameworks/Tcl.framework/Tcl':'tcl' your_script.py
+
+https://github.com/pyinstaller/pyinstaller/issues/1350
+pyinstaller --onefile --add-binary='/System/Library/Frameworks/Tk.framework/Tk':'tk' --add-binary='/System/Library/Frameworks/Tcl.framework/Tcl':'tcl' xyz.py
+
+Mac:
+pyinstaller -w main.py --name uw_dnmr
+pyinstaller --clean -w --add-binary='/System/Library/Frameworks/Tk.framework/Tk':'tk' --add-binary='/System/Library/Frameworks/Tcl.framework/Tcl':'tcl' main.py --name uw_dnmr

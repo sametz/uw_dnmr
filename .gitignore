@@ -4,3 +4,6 @@ uw_dnmr/.cache/
 .cache
 /coverage/
 __pycache__/
+build/
+dist/
+venv/
