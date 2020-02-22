@@ -5,4 +5,5 @@ pytest
 numpy
 matplotlib==3.0.3
 scipy
-nmrsim
+nmrsim==0.4.0rc1
+
