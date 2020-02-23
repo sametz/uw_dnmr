@@ -6,4 +6,7 @@ uw_dnmr/.cache/
 __pycache__/
 build/
 dist/
+env/
 venv/
+*.pyo
+.DS_Store
