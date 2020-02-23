@@ -1,8 +1,4 @@
-# specific versions of python and matplotlib are to avoid crash bug with
-# tkinter and mac mojave
-python==3.7.0
-pytest
+matplotlib
+nmrsim==0.4.0rc1
 numpy
-matplotlib==3.0.3
 scipy
-nmrsim
