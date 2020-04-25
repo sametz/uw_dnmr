@@ -1,4 +1,4 @@
-UW-DNMR v0.1.1 (alpha)
+UW-DNMR v0.3.0 (alpha)
 **********************
 
 **UW-DNMR** (Un-Windowed Dynamic NMR; pronounced "You Dee En Em Arr") is a

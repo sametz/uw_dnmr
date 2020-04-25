@@ -4,3 +4,12 @@ uw_dnmr/.cache/
 .cache
 /coverage/
 __pycache__/
+/temp/
+build/
+dist/
+*.pyo
+*.spec
+venv/
+env/
+/macOS/
+/temp/
