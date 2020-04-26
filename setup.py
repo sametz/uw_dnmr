@@ -4,14 +4,14 @@ with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="qt_nmr",
-    version="0.1.0",
+    name="uw-dnmr",
+    version="0.3.0",
     author="Geoffrey M. Sametz",
     author_email="sametz@udel.edu",
     description="Simulation of First-Order, Second-Order, and Dynamic NMR spectra.",
     long_description=long_description,
     long_description_content_type="text/x-rst",
-    url="https://github.com/sametz/qt_nmr",
+    url="https://github.com/sametz/uw_dnmr",
     packages=setuptools.find_packages(
         where='src',
         exclude=['tests']

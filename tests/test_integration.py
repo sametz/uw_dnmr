@@ -7,7 +7,7 @@ from PySide2 import QtCore
 
 from qt_nmr.controller.controller import Controller
 from qt_nmr.model.model import Model
-# from qt_nmr.view.widgets.entry import V_EntryWidget
+# from uw_dnmr.view.widgets.entry import V_EntryWidget
 from tests.accepted_data.utils import load_lineshape
 
 # There's a lot of repetition in the test code, but trying to reduce repetition

@@ -1,4 +1,4 @@
-"""The executable file for the qt_nmr app"""
+"""The executable file for the uw_dnmr app"""
 import sys
 
 from PySide2.QtWidgets import QApplication
