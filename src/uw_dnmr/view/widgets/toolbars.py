@@ -6,7 +6,7 @@ from PySide2.QtGui import QColor, QPalette
 from PySide2.QtWidgets import (QWidget, QHBoxLayout, QStackedWidget, QSpinBox,
                                QPushButton, QDialog, QGridLayout, QLabel,
                                QVBoxLayout, QSizePolicy)
-from qt_nmr.view.widgets.entry import (EntryWidget, V_EntryWidget,
+from uw_dnmr.entry import (EntryWidget, V_EntryWidget,
                                        J_EntryWidget, Color)
 
 logger = logging.getLogger(__name__)

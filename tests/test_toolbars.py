@@ -1,7 +1,7 @@
 import logging
 
-from qt_nmr.view.settings import view_defaults
-from qt_nmr.view.widgets.toolbars import DNMR_Bar
+from uw_dnmr.view.settings import view_defaults
+from uw_dnmr.view.widgets.toolbars import DNMR_Bar
 
 
 class FakeMainWindow:

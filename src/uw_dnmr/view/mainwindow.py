@@ -3,8 +3,8 @@ import logging
 from PySide2.QtCore import Slot as pyqtSlot
 from PySide2.QtWidgets import QMainWindow, QRadioButton
 
-from qt_nmr.view.settings import view_defaults
-from qt_nmr.view.ui import UiMainWindow
+from uw_dnmr.view.settings import view_defaults
+from uw_dnmr.view.ui import UiMainWindow
 
 logger = logging.getLogger(__name__)
 

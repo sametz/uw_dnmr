@@ -3,7 +3,7 @@ from PySide2.QtCore import Slot as pyqtSlot
 from PySide2.QtWidgets import QRadioButton
 
 
-from qt_nmr.view.widgets.buttons import ABC_ButtonGroup, MultipletButtonGroup
+from uw_dnmr.view.widgets.buttons import ABC_ButtonGroup, MultipletButtonGroup
 
 
 @pyqtSlot(QRadioButton)

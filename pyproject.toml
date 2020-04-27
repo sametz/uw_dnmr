@@ -7,13 +7,13 @@ bundle = "com.example"
 version = "0.3.0"
 url = "https://github.com/sametz/uw_dnmr"
 license = "MIT license"
-author = 'Geoffrey Sametz'
+author = 'Geoffrey M. Sametz'
 author_email = "sametz@udel.edu"
 
 [tool.briefcase.app.uw_dnmr]
 formal_name = "uw-dnmr"
 description = "Simulation of First-Order, Second-Order, and Dynamic NMR spectra"
-icon = "src/uw_dnmr/resources/uw_dnmr.png"
+icon = "src/uw_dnmr/resources/uw_dnmr"
 sources = ['src/uw_dnmr']
 requires = [
     'pyside2==5.13.0',

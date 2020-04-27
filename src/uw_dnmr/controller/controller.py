@@ -2,8 +2,8 @@ import logging
 
 from PySide2.QtCore import QObject
 
-from qt_nmr.controller.adapter import view_to_model
-from qt_nmr.view.mainwindow import MainWindow
+from uw_dnmr.controller.adapter import view_to_model
+from uw_dnmr.view.mainwindow import MainWindow
 
 logger = logging.getLogger(__name__)
 

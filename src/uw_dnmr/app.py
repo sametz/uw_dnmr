@@ -3,8 +3,8 @@ import sys
 
 from PySide2.QtWidgets import QApplication
 
-from qt_nmr.controller.controller import Controller
-from qt_nmr.model.model import Model
+from uw_dnmr.controller.controller import Controller
+from uw_dnmr.model.model import Model
 
 
 # noinspection PyArgumentList

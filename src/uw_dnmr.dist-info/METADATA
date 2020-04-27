@@ -2,8 +2,8 @@ Metadata-Version: 2.1
 Name: uw_dnmr
 Formal-Name: uw-dnmr
 App-ID: com.example.uw_dnmr
-Version: 0.1.0
+Version: 0.3.0
 Home-page: https://github.com/sametz/uw_dnmr
-Author: Geoffrey Sametz
+Author: Geoffrey M. Sametz
 Author-email: sametz@udel.edu
 Summary: Simulation of First-Order, Second-Order, and Dynamic NMR spectra

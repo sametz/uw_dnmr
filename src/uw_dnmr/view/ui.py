@@ -2,8 +2,8 @@ from pyqtgraph import PlotWidget, setConfigOption
 from PySide2.QtWidgets import (QHBoxLayout, QStackedWidget,
                                QVBoxLayout, QWidget)
 
-from qt_nmr.view.widgets.toolbars import toolbar_stack
-from qt_nmr.view.widgets.buttons import (
+from uw_dnmr.widgets.toolbars import toolbar_stack
+from uw_dnmr.widgets.buttons import (
     CalcTypeButtonGroup, ABC_ButtonGroup, MultipletButtonGroup,
     DNMR_ButtonGroup)
 

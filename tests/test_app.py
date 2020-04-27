@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from qt_nmr.app import App
+from uw_dnmr.app import App
 from tests.accepted_data.utils import load_lineshape
 
 

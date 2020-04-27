@@ -5,8 +5,8 @@ import numpy as np
 from PySide2 import QtCore
 # import pytest
 
-from qt_nmr.controller.controller import Controller
-from qt_nmr.model.model import Model
+from uw_dnmr.controller.controller import Controller
+from uw_dnmr.model.model import Model
 # from uw_dnmr.view.widgets.entry import V_EntryWidget
 from tests.accepted_data.utils import load_lineshape
 

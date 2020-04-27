@@ -1,6 +1,6 @@
 from PySide2.QtWidgets import QRadioButton
 
-from qt_nmr.view.mainwindow import MainWindow
+from uw_dnmr.view.mainwindow import MainWindow
 
 
 def test_calctype_not_impemented(qtbot, caplog):

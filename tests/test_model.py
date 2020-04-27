@@ -2,9 +2,9 @@ import numpy as np
 import pytest
 
 from tests.accepted_data.utils import load_lineshape
-from qt_nmr.controller.adapter import view_to_model
-from qt_nmr.model.model import Model
-from qt_nmr.view.settings import view_defaults
+from uw_dnmr.controller.adapter import view_to_model
+from uw_dnmr.model.model import Model
+from uw_dnmr.view.settings import view_defaults
 
 
 def model_args(calctype, model, params):
