@@ -18,7 +18,7 @@ sources = ['src/uw_dnmr']
 requires = [
     'pyside2==5.13.0',
     'pyqtgraph>=0.11.0rc0',
-    'nmrsim==0.4.0rc1'
+    'nmrsim==0.5.0'
 ]
 
 

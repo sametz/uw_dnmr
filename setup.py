@@ -33,7 +33,7 @@ setuptools.setup(
     ],
     keywords='NMR simulation spectra spectrum',
     python_requires='>=3.6',
-    install_requires=['nmrsim==0.4.0rc1',
+    install_requires=['nmrsim==0.5.0',
                       'pyside2',
                       'pyqtgraph==0.11.0rc0'
                       ],
@@ -44,7 +44,7 @@ setuptools.setup(
             'pyfakefs',
             'pytest-qt',
             # for testing packaging:
-            'beeware',
+            'briefcase==0.3.0.dev8',
         ]
     }
 )
