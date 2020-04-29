@@ -67,11 +67,10 @@ class MainWindow(QMainWindow):
     @pyqtSlot(QRadioButton)
     def select_toolbar(self, button):
         name = button.objectName()
-        # This slot should be invoked by  test_integration.py for nspin tests,
-        # but qtbot isn't successfully clicking the nspin radio buttons, so:
-        logger.info(f'***BUTTON CLICK*** current model button is {name}')
+        logger.debug(f'***BUTTON CLICK*** current model button is {name}')
         if name.startswith('nuclei'):
-            logger.info(f'active button is {self._ui.abc_menu.buttongroup.checkedButton().objectName()}')
+            logger.debug(f'active button is {self._ui.abc_menu.buttongroup.checkedButton().objectName()}')
+
         button_bars = {
             'AB_button': 'multiplet_AB',
             'AB2_button': 'multiplet_AB2',
