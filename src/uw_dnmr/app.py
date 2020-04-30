@@ -22,6 +22,7 @@ def main():
     logging.basicConfig(level=logging.INFO,
                         format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
     logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
     numba_logger = logging.getLogger('numba')
     numba_logger.setLevel(logging.CRITICAL)
     app = App(sys.argv)

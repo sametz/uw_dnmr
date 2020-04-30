@@ -7,7 +7,7 @@ from PySide2.QtWidgets import (QWidget, QHBoxLayout, QStackedWidget, QSpinBox,
                                QPushButton, QDialog, QGridLayout, QLabel,
                                QVBoxLayout, QSizePolicy)
 from uw_dnmr.view.widgets.entry import (EntryWidget, V_EntryWidget,
-                                       J_EntryWidget, Color)
+                                        J_EntryWidget, Color)
 
 logger = logging.getLogger(__name__)
 

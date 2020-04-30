@@ -5,6 +5,8 @@ exclude =
     # docs/source/conf.py,
     env,
     venv,
+    temp,
+    macOS,
     .tox,
     build,
     dist
