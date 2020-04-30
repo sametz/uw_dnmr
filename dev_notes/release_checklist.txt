@@ -1,0 +1,9 @@
+flake8
+pytest
+bump version
+when docs added: cd docs; make html; make clean
+briefcase dev/update/run/package --no-sign on mac and windows w/ successful installs
+(update -d and update -r for dependencies and resources respectively)
+merge release branch into master
+git tag -a x.y.z (version)
+create GH release with installers

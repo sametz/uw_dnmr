@@ -1,0 +1,6 @@
+locations of version numbers: must be manually changed for now on each release.
+
+uw_dnmr.__init__
+setup.py
+pyproject.toml
+CHANGELOG.rst
