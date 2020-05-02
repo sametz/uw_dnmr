@@ -1,7 +1,7 @@
 UW-DNMR v0.3.0 (alpha)
 **********************
 
-.. image:: docs/source/_static/screenshot.png
+.. image:: docs/source/_static/images/screenshot.png
 
 **UW-DNMR** (Un-Windowed Dynamic NMR; pronounced "You Dee En Em Arr") is a
 Python implementation of the core features of WinDNMR by Hans Reich. The
