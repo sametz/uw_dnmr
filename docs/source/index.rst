@@ -6,10 +6,14 @@
 Welcome to uw-dnmr's documentation!
 ===================================
 
+**uw-dnmr** simulates line shapes for NMR signals.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   intro
    ch1
    ch2
 

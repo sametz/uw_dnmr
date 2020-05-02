@@ -1,30 +1,3 @@
-.. include:: docs/source/intro.rst
-.. include:: docs/source/install.rst
-.. include:: docs/source/todo.rst
-.. include:: docs/source/feedback.rst
-.. include:: docs/source/acknowledgements.rst
-
-Installation and Use
-====================
-
-The project is alpha and subject to change.
-The master branch should maintain a functional program.
-If you're curious, and have a Python 3 installation,
-you can download the project folders,
-install the requirements in requirements.txt if necessary,
-and run main.py from the command line.
-
-TODO
-====
-
-See CHANGELOG.rst for the map towards a version 1.0.
-
-Feedback
-========
-
-I welcome feedback on this project. Feel free to leave an issue on Github, or
-contact me by email (mylastname at udel dot edu).
-
 Acknowledgements
 ================
 
@@ -47,3 +20,4 @@ primarily from two sources:
 Although "baking the spin Hamiltonian from scratch" is educational, and may
 enable the modeling of non-spin-1/2 nuclei in the future, it likely comes at
 a performance cost, and may be factored out in future versions.
+
