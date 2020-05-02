@@ -1,0 +1,13 @@
+[flake8]
+exclude =
+    .git,
+    __pycache__,
+    # docs/source/conf.py,
+    env,
+    venv,
+    temp,
+    macOS,
+    .tox,
+    build,
+    dist
+max-line-length = 119
