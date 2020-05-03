@@ -9,12 +9,13 @@ UNDER CONSTRUCTION
 ------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    features
+   user_guide
    feedback
-   acknowledgements.rst
+   acknowledgements
 
 
 .. currently disabled
