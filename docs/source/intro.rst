@@ -1,5 +1,5 @@
 UW-DNMR v0.3.0 (alpha)
-**********************
+======================
 
 .. image:: _static/images/screenshot.png
 
