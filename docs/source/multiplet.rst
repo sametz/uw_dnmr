@@ -42,17 +42,27 @@ The simulation is limited to a maximum of 4 different J values
 AB and AB\ :sub:`2`
 ^^^^^^^^^^^^^^^^^^^
 
-placeholder
+These simulations take parameters for Jab, Vab and Vcentr.
+Keep in mind that, if you are trying to match an experimental AB pattern,
+that Vab is *not* the midpoint of the individual "doublet" for A and B.
+As the degree of second-order behavior increases (as Vab decreases),
+:math:`\nu_A` and :math:`\nu_B` will be closer to the larger, inner peaks
+than the smaller, outer peaks:
+
+TODO: add graphic
 
 ABX
 ^^^
 
-placeholder
+TODO: check first that behaviour matches WINDNMR (fixed X frequency; correct vixually)
 
 ABX\ :sub:`3`
 ^^^^^^^^^^^^^^
 
-placeholder
+The simulation only displays the AB part of the signal,
+and assumes the X signal is far away in frequency.
+
+TODO: also check vs WINDNMR.
 
 AA'XX' and AA'BB'
 ^^^^^^^^^^^^^^^^^
