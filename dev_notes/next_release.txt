@@ -1,0 +1,1 @@
+* app window is named "qt_mvc Demo" still.
