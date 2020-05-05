@@ -9,5 +9,8 @@ with a grid of entries for the J coupling constants.
 The frequencies of the nuclei can be adjusted in the pop-up window as well as the main window.
 
 .. [2] This is the same limit as in WINDNMR.
-   However, the :code:`nmrsim` library behind the QM calculations can simulate systems of up to 11 nuclei,
+   However, the `nmrsim library`_ behind the QM calculations can simulate systems of up to 11 nuclei,
    so this could be increased at some point in the future.
+
+   .. _nmrsim library: https://github.com/sametz/nmrsim
+
