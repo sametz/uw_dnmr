@@ -54,21 +54,36 @@ TODO: add graphic
 ABX
 ^^^
 
-TODO: check first that behaviour matches WINDNMR (fixed X frequency; correct vixually)
+This ABX model is an analytic solution for the case
+where the frequency of H\ :sub:`X` is far from Vcentr.
+This simplifies the math,
+but the appearance of the H\ :sub:`X` does not change as :math:`\nu_X` changes.
+If accuracy is required, the **"ABC..." Calc Type**  should be used
+to model the exact second-order behavior.
 
 ABX\ :sub:`3`
 ^^^^^^^^^^^^^^
 
-The simulation only displays the AB part of the signal,
-and assumes the X signal is far away in frequency.
+This simulation makes two simplifying assumptions:
 
-TODO: also check vs WINDNMR.
+* the frequency of H\ :sub:`X` is far from Vcentr
+* :math:`J_{AX} \approx J_{BX}` (which is usually the case)
 
-AA'XX' and AA'BB'
-^^^^^^^^^^^^^^^^^
+This is effectively an AB quartet
+where each of the 4 lines is further split into a first-order quartet.
+The simulation only displays the AB part of the signal.
 
-placeholder
+AA'XX'
+^^^^^^
 
+This simulates one half (e.g. the A part) of an AA'XX' spin system.
+The simulation assumes a very large frequency difference between  H\ :sub:`A` and  H\ :sub:`X`.
+
+AA'BB'
+^^^^^^
+
+This is a complete second-order (quantum-mechanical) simulation for an AA'BB' spin system.
+No simplifying assumptions are made.
 
 
 .. [1] See: Pople, J.A.; Schneider, W.G.; Bernstein, H.J.
