@@ -13,6 +13,7 @@ venv/
 env/
 /macOS/
 /temp/
+utils/*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -81,3 +82,4 @@ android/
 linux/
 django/
 /temp/
+/.vscode/

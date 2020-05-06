@@ -25,7 +25,7 @@ The author interprets the terms below as follows:
 * **release candidate status**: beta,
   plus standalone executable(s) for Windows, Mac OS X, and Linux.
 
-* **Version 1.0.0 release**: a stable app.
+* **Version 1.0.0 release**: a stable application.
 
 0.3.0 - 2020-05-01 (alpha)
 --------------------------

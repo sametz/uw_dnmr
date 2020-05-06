@@ -45,6 +45,8 @@ setuptools.setup(
             'pytest-qt',
             # for testing packaging:
             'briefcase==0.3.0.dev8',
+            "sphinx",
+            "sphinx-rtd-theme"
         ]
     }
 )

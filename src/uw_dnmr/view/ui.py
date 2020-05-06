@@ -2,6 +2,7 @@ from pyqtgraph import PlotWidget, setConfigOption
 from PySide2.QtWidgets import (QHBoxLayout, QStackedWidget,
                                QVBoxLayout, QWidget)
 
+from uw_dnmr import __version__
 from uw_dnmr.view.widgets.toolbars import toolbar_stack
 from uw_dnmr.view.widgets.buttons import (
     CalcTypeButtonGroup, ABC_ButtonGroup, MultipletButtonGroup,
@@ -11,7 +12,7 @@ from uw_dnmr.view.widgets.buttons import (
 class UiMainWindow:
     def setupUi(self, main_window):
         main_window.setObjectName('main_window')
-        main_window.setWindowTitle('qt_mvc Demo')
+        main_window.setWindowTitle('UW-DNMR v. ' + __version__)
         main_window.resize(800, 600)
 
         # pyqtgraph configuration
