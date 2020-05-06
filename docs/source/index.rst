@@ -12,6 +12,7 @@ UNDER CONSTRUCTION
    :maxdepth: 3
    :caption: Contents:
 
+   install
    features
    user_guide
    feedback
