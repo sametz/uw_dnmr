@@ -28,7 +28,7 @@ def parse_abx(params):
     In WINDNMR, vx was hard coded to equal vb + 100.
     """
     """2020-05-04: check this statement. UW-DNMR seems to instantiate with
-    vx = 200 Hz. 
+    vx = 200 Hz.
     TODO: Compare VB6 code to UW-DNMR output."""
 
     logger.debug(f'params before abx conversion: {params}')
