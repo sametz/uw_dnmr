@@ -12,7 +12,7 @@ ABXdict = {'Jab': 12.0,
            'Jax': 2.0,
            'Jbx': 8.0,
            'Vab': 15.0,
-           'Vcentr': 7.5}
+           'Vcentr': 118.0}
 
 ABX3dict = {'Jab': -12.0,
             'Jax': 7.0,
