@@ -10,6 +10,7 @@ dist/
 *.pyo
 *.spec
 venv/
+.venv/
 env/
 /macOS/
 /temp/
@@ -83,3 +84,9 @@ linux/
 django/
 /temp/
 /.vscode/
+
+# Briefcase log files
+logs/
+
+# Other
+*.dist-info

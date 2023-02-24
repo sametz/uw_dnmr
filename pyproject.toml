@@ -16,9 +16,9 @@ description = "Simulation of First-Order, Second-Order, and Dynamic NMR spectra"
 icon = "src/uw_dnmr/resources/uw_dnmr"
 sources = ['src/uw_dnmr']
 requires = [
-    'pyside2==5.13.0',
-    'pyqtgraph>=0.11.0rc0',
-    'nmrsim==0.5.0'
+    'pyside2==5.15.2.1',
+    'pyqtgraph==0.13.1',
+    'nmrsim==0.6.0'
 ]
 
 
