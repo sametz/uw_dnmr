@@ -1,1 +1,1 @@
-* app window is named "qt_mvc Demo" still. Chang to "UW-DNMR"
+* app window is named "qt_mvc Demo" still. Change to "UW-DNMR" + version number.

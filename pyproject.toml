@@ -15,12 +15,23 @@ formal_name = "uw-dnmr"
 description = "Simulation of First-Order, Second-Order, and Dynamic NMR spectra"
 icon = "src/uw_dnmr/resources/uw_dnmr"
 sources = ['src/uw_dnmr']
+test_sources = ["tests"]
 requires = [
     'pyside2==5.15.2.1',
     'pyqtgraph==0.13.1',
     'nmrsim==0.6.0'
 ]
-
+test_requires = [
+    'flake8',
+    'pytest',
+    'pyfakefs',
+    'pytest-qt',
+    'pytest-cov',
+    # for testing packaging:
+    #'briefcase==0.3.0.dev8',
+    "sphinx",
+    "sphinx-rtd-theme",
+]
 
 [tool.briefcase.app.uw_dnmr.macOS]
 requires = []
@@ -37,3 +48,22 @@ requires = []
 
 [tool.briefcase.app.uw_dnmr.android]
 requires = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = [
+    "uw_dnmr",
+]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.coverage.paths]
+source = [
+    "src/uw_dnmr",
+    "*/site-packages/uw_dnmr",
+]

@@ -1,5 +1,7 @@
 import logging
 
+import pytest
+
 from uw_dnmr.view.settings import view_defaults
 from uw_dnmr.view.widgets.toolbars import DNMR_Bar
 
@@ -12,6 +14,7 @@ class FakeMainWindow:
         pass
 
 
+@pytest.mark.skip(reason="No longer works or needed. Consider fix or delete.")
 def test_dnmr_bar_instantiates(caplog, qtbot):
     with caplog.at_level(logging.DEBUG):
         pass

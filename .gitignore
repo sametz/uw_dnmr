@@ -90,3 +90,4 @@ logs/
 
 # Other
 *.dist-info
+/src/uw_dnmr.dist-info/
